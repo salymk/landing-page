@@ -23,8 +23,8 @@ const li = document.createElement("li");
 
 const menuItems = `
   <li class="menu__items"><a href="#section1">Section 1</a></li>
-  <li class="menu__items">Section 2</li>
-  <li class="menu__items">Section 3</li>
+  <li class="menu__items"><a href="#section2">Section 2</a></li>
+  <li class="menu__items"><a href="#section3">Section 3</a></li>
 `;
 
 navbarList.innerHTML = menuItems;
