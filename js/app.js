@@ -26,12 +26,12 @@ const li = document.createElement("li");
 // const sectionThree = li.textContent = "Section Three";
 
 const menuItems = `
-  <li>Section One</li>
-  <li>Section Two</li>
-  <li>Section Three</li>
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
 `;
 
-navbarList.innerHTML(menuItems).appendChild(menuItems);
+navbarList.innerHTML = menuItems;
 
 
 /**
