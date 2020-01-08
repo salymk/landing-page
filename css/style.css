@@ -24,6 +24,10 @@ a {
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 /* Typeography General*/
 h1 {
