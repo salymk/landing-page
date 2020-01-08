@@ -68,9 +68,9 @@ section {
 .navbar__menu ul {
   margin: 0;
   text-align: right;
-  background: green;
+  background: rgb(8, 24, 67);
   padding: 25px;
-  
+
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -97,6 +97,9 @@ section {
 .menu__items {
   margin: 10px;
   font-size: 2em;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 /* Header Styles */

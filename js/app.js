@@ -22,9 +22,9 @@ const navbarList = document.querySelector("#navbar__list");
 const li = document.createElement("li");
 
 const menuItems = `
-  <li class="menu__items">One</li>
-  <li class="menu__items">Two</li>
-  <li class="menu__items">Three</li>
+  <li class="menu__items">Section 1</li>
+  <li class="menu__items">Section 2</li>
+  <li class="menu__items">Section 3</li>
 `;
 
 navbarList.innerHTML = menuItems;
