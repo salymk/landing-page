@@ -78,7 +78,7 @@ section {
   margin: 0;
   text-align: right;
   background: rgb(8, 24, 67);
-  padding: 25px;
+  padding: 10px;
 
   display: flex;
   flex-direction: row;
@@ -107,7 +107,7 @@ section {
   margin: 10px;
   font-size: 2em;
   border: 1px solid white;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
 }
 
