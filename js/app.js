@@ -21,20 +21,24 @@
 const navbarList = document.querySelector("#navbar__list");
 const li = document.createElement("li");
 
-const menuItems = `
-  <li class="menu__items"><a href="#section1">Section 1</a></li>
-  <li class="menu__items"><a href="#section2">Section 2</a></li>
-  <li class="menu__items"><a href="#section3">Section 3</a></li>
-`;
-
-navbarList.innerHTML = menuItems;
-
 
 /**
  * End Global Variables
  * Start Helper Functions
  *
 */
+
+const isInViewport = (elem) => {
+  conts bounding = elem.getBoundingClientRect();
+  return (
+    bounding.top >= 0 &&
+    bounding.left >= 0 &&
+    bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
+
+
 
 
 
@@ -45,6 +49,13 @@ navbarList.innerHTML = menuItems;
 */
 
 // build the nav
+const menuItems = `
+  <li class="menu__items"><a href="#section1">Section 1</a></li>
+  <li class="menu__items"><a href="#section2">Section 2</a></li>
+  <li class="menu__items"><a href="#section3">Section 3</a></li>
+`;
+
+navbarList.innerHTML = menuItems;
 
 
 // Add class 'active' to section when near top of viewport
