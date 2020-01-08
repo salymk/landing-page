@@ -66,10 +66,14 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu ul {
-  padding-left: 0;
   margin: 0;
   text-align: right;
   background: green;
+  padding: 25px;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .navbar__menu li {
@@ -88,6 +92,11 @@ section {
   background: #333;
   color: #fff;
   transition: ease 0.3s all;
+}
+
+.menu__items {
+  margin: 10px;
+  font-size: 2em;
 }
 
 /* Header Styles */
