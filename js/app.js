@@ -21,6 +21,17 @@
 const navbarList = document.querySelector("#navbar__list");
 const li = document.createElement("li");
 
+// const sectionOne = li.textContent = "Section One";
+// const sectionTwo = li.textContent = "Section Two";
+// const sectionThree = li.textContent = "Section Three";
+
+const menuItems = `
+  <li>Section One</li>
+  <li>Section Two</li>
+  <li>Section Three</li>
+`;
+
+navbarList.innerHTML(menuItems).appendChild(menuItems);
 
 
 /**
