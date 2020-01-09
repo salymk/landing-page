@@ -31,18 +31,41 @@ const li = document.createElement("li");
  *
 */
 
-const isInViewport = (elem) => {
-  conts bounding = elem.getBoundingClientRect();
-  return (
-    bounding.top >= 0 &&
-    bounding.left >= 0 &&
-    bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-};
+// target === where you want to scroll
+// duration === how long you want the scroll effect to take
+function smoothScroll(target, duration) {
+  var target = document.querySelector(target);
+  // returns coordinates relative to the viewport
+  var targetPosition = target.getBoundingClientRect().top;
+  // returns coordinates relative to the window
+  var startPosition = window.pageYOffset;
+  // returns distance
+  var distance = targetPosition - startPosition;
+  var startTime = null;
 
+  function animation(currentTime) {
+    if(startTime === null) startTime = currentTime;
+    var timeElapsed = currentTime - startTime;
+    var run = ease(timeElapsed, startPosition, distance, duration);
+    // Vertically scrolls
+    window.scrollTo(0, run);
+    // If timeElapsed is less than duration, call requestAnimationFrame.
+    // This method tells the browser that you wish to perform an animation and requests
+    // that the browser calls a specified function to update an animation before the next repaint
+    if(timeElapsed < duration) requestAnimationFrame(animation);
+  }
 
+  // Easing
+    function ease (t, b, c, d) {
+    t /= d/2;
+    if (t < 1) return c/2*t*t*t + b;
+    t -= 2;
+    return c/2*(t*t*t + 2) + b;
+  };
 
+  requestAnimationFrame(animation);
+
+}
 
 
 /**
@@ -63,7 +86,6 @@ navbarList.innerHTML = menuItems;
 
 // Add class 'active' to section when near top of viewport
 
-
 // Scroll to anchor ID using scrollTO event
 
 
@@ -76,5 +98,6 @@ navbarList.innerHTML = menuItems;
 // Build menu
 
 // Scroll to section on link click
+
 
 // Set sections as active
