@@ -64,8 +64,11 @@ function smoothScroll(target, duration) {
   };
 
   requestAnimationFrame(animation);
-
 }
+
+section1.addEventListener("click", function () {
+  smoothScroll(".section2", 1000);
+});
 
 
 /**
