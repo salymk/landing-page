@@ -1,3 +1,7 @@
+//Smooth scrolling module
+import jump from '/js/jump.js'
+
+
 //1) Create the Nav Links for every section you have on the page.
 //2) Add "click" event listeners on every Nav links you created.
 //3) When user clicks on the link, scroll to the corresponding section.
@@ -25,57 +29,31 @@ sections.forEach((element) => {
   const li = document.createElement("li");
   const a = document.createElement("a");
   a.textContent = menuItem;
-  a.href = `#${sectionId}`;
+  // a.href = `#${sectionId}`;
+  a.href = "#";
   li.appendChild(a);
   navbarList.appendChild(li);
   a.classList = sectionId;
 });
 
+const section1 = document.querySelector(".section1");
+const section2 = document.querySelector(".section2");
+const section3 = document.querySelector(".section3");
+const section4 = document.querySelector(".section4");
 
 
-
-// target === where you want to scroll
-// duration === how long you want the scroll effect to take
-function smoothScroll(target, duration) {
-  var target = document.querySelector(target);
-  // returns coordinates relative to the viewport
-  var targetPosition = target.getBoundingClientRect().top;
-  // returns coordinates relative to the window
-  var startPosition = window.pageYOffset;
-  // returns distance
-  var distance = targetPosition - startPosition;
-  var startTime = null;
-
-  function animation(currentTime) {
-    if(startTime === null) startTime = currentTime;
-    var timeElapsed = currentTime - startTime;
-    var run = ease(timeElapsed, startPosition, distance, duration);
-    // Vertically scrolls
-    window.scrollTo(0, run);
-    // If timeElapsed is less than duration, call requestAnimationFrame.
-    // This method tells the browser that you wish to perform an animation and requests
-    // that the browser calls a specified function to update an animation before the next repaint
-    if(timeElapsed < duration) requestAnimationFrame(animation);
-  }
-
-  // Easing
-    function ease (t, b, c, d) {
-    t /= d/2;
-    if (t < 1) return c/2*t*t*t + b;
-    t -= 2;
-    return c/2*(t*t*t + 2) + b;
-  };
-
-  requestAnimationFrame(animation);
-}
-
-const section1 = document.querySelector("#section1");
-const section2 = document.querySelector("#section2");
-
-section1.addEventListener('click', function () {
-  smoothScroll(".section2", 1000);
+section1.addEventListener("click", () => {
+  jump("#section1");
 });
 
-section2.addEventListener('click', () => {
-  smoothScroll(".section1", 1000);
+section2.addEventListener("click", () => {
+  jump("#section2");
+});
+
+section3.addEventListener("click", () => {
+  jump("#section3");
+});
+
+section4.addEventListener("click", () => {
+  jump("#section4");
 });
