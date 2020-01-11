@@ -1,17 +1,7 @@
-/**
- *
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- *
- * Dependencies: None
- *
- * JS Version: ES2015/ES6
- *
- * JS Standard: ESlint
- *
-*/
+//1) Create the Nav Links for every section you have on the page.
+//2) Add "click" event listeners on every Nav links you created.
+//3) When user clicks on the link, scroll to the corresponding section.
+//4)  When a section is in the view, highlight the section as well as the corresponding Nav link by adding some kind of active state to them.
 
 /**
  * Define Global Variables
@@ -21,7 +11,14 @@
 const navbarList = document.querySelector("#navbar__list");
 const sections = document.querySelectorAll("section");
 
-//Higher order functions
+/**
+ * 1) Create the Nav Links for every section on the page
+ *
+*/
+
+//Dynamically creates the navbar
+//If you add new section, it would create a
+//menu item for it.
 sections.forEach((element) => {
   const menuItem = element.dataset.nav;
   const sectionId = element.id;
@@ -33,12 +30,6 @@ sections.forEach((element) => {
   navbarList.appendChild(li);
 });
 
-
-/**
- * End Global Variables
- * Start Helper Functions
- *
-*/
 
 // // target === where you want to scroll
 // // duration === how long you want the scroll effect to take
@@ -74,45 +65,3 @@ sections.forEach((element) => {
 //
 //   requestAnimationFrame(animation);
 // }
-//
-// const m1 = document.querySelector("#m1");
-
-// m1.addEventListener("click", function () {
-//   smoothScroll(".section2", 1000);
-//   console.log('click');
-// });
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- *
-*/
-
-// build the nav
-// const menuItems = `
-//   <li class="menu__items" id="m1" ><a href="#">Section 1</a></li>
-//   <li class="menu__items" id="m2"><a href="#">Section 2</a></li>
-//   <li class="menu__items" id="m3"><a href="#">Section 3</a></li>
-// `;
-//
-// navbarList.innerHTML = menuItems;
-
-
-// Add class 'active' to section when near top of viewport
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- *
-*/
-
-// Build menu
-
-// Scroll to section on link click
-
-
-// Set sections as active
