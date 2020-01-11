@@ -103,13 +103,23 @@ section {
   transition: ease 0.3s all;
 }
 
-.menu__items {
+ul li {
   margin: 10px;
-  font-size: 2em;
+  font-size: 1.3em;
   border: 1px solid white;
   padding: 5px;
   border-radius: 5px;
 }
+
+/* li:hover{
+  background-color: white;
+  color: coral;
+}
+
+.link:hover {
+  color: darkblue;
+} */
+
 
 /* Header Styles */
 .page__header {
