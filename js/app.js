@@ -14,6 +14,14 @@ import jump from '/js/jump.js'
 
 const navbarList = document.querySelector("#navbar__list");
 const sections = document.querySelectorAll("section");
+// const aClasses = document.querySelectorAll('a');
+
+// aClasses.forEach((e) => {
+//   const aClass = e.classList;
+//   aClass.addEventListener('click', () => {
+//
+//   });
+// });
 
 /**
  * 1) Create the Nav Links for every section on the page
@@ -35,6 +43,8 @@ sections.forEach((element) => {
   navbarList.appendChild(li);
   a.classList = sectionId;
 });
+
+
 
 const section1 = document.querySelector(".section1");
 const section2 = document.querySelector(".section2");
