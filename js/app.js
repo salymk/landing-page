@@ -57,13 +57,20 @@ sections.forEach((element) => {
 // });
 
 
-
+/**
+ * 2) Add "click" event listeners on every Nav links you created.
+ *
+*/
 const section1 = document.querySelector(".section1");
 const section2 = document.querySelector(".section2");
 const section3 = document.querySelector(".section3");
 const section4 = document.querySelector(".section4");
 
 
+/**
+ * 3) When user clicks on the link, scroll to the corresponding section.
+ *
+*/
 section1.addEventListener("click", () => {
   jump("#section1");
 });
