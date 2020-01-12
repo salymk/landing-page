@@ -16,6 +16,7 @@ sal();
 
 const navbarList = document.querySelector("#navbar__list");
 const sections = document.querySelectorAll("section");
+
 // const aTags = document.querySelectorAll('a');
 
 /**
@@ -88,3 +89,26 @@ section3.addEventListener("click", () => {
 section4.addEventListener("click", () => {
   jump("#section4");
 });
+
+
+
+function scrollAppear() {
+  const li = document.querySelectorAll("li");
+  const section = document.querySelector("section");
+
+
+  //This returns the size of an element and its position relative
+  //to the viewport
+  var introPosition = section.getBoundingClientRect().top;
+  //Returns the height of the screen
+  var screenPosition = window.innerHeight / 1.3;
+
+  if(introPosition < screenPosition) {
+    li.forEach((e) => {
+      e.classList.add("active-section");
+    });
+
+  }
+}
+
+window.addEventListener("scroll", scrollAppear);
