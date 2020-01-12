@@ -14,6 +14,7 @@ import jump from '/js/jump.js'
 
 const navbarList = document.querySelector("#navbar__list");
 const sections = document.querySelectorAll("section");
+// const aTags = document.querySelectorAll('a');
 
 /**
  * 1) Create the Nav Links for every section on the page
@@ -48,13 +49,9 @@ sections.forEach((element) => {
 //use jump() to scroll to different sections
 
 // const aTags = document.querySelectorAll('a');
-//
-// aTags.forEach((e) => {
-//   const aClass = e.className;
-//
-//   const sections = document.querySelector(aClass);
-//
-//   sections.addEventListener('click', ()=> {
+
+// aTags.forEach((a) => {
+//   a.addEventListener("click", () => {
 //     jump("#section1");
 //   });
 // });
