@@ -1,5 +1,7 @@
 //Smooth scrolling module
 import jump from '/js/jump.js'
+//Scrolling animation
+sal();
 
 
 //1) Create the Nav Links for every section you have on the page.
