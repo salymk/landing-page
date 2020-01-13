@@ -98,6 +98,11 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.intersectionRatio > 0) {
       entry.target.classList.add("active-section");
+      if(entry.target.classList.contains("active-section")){
+          li.forEach(i => {
+            i.classList.toggle("active-li")
+          });
+      }
     } else {
       entry.target.classList.remove("active-section");
     }
@@ -107,6 +112,12 @@ const observer = new IntersectionObserver((entries) => {
 h2.forEach(h => {
   observer.observe(h);
 });
+
+// h2.forEach((h) => {
+//   if(h.classList.contains("active-section")) {
+//     console.log("contains");
+//   }
+// });
 
 // li.forEach(i => {
 //   if(h2.classList.contains("active-section")) {
