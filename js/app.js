@@ -16,6 +16,8 @@ sal();
 
 const navbarList = document.querySelector("#navbar__list");
 const sections = document.querySelectorAll("section");
+const aTags = document.querySelectorAll('a');
+
 
 // const aTags = document.querySelectorAll('a');
 
@@ -37,7 +39,7 @@ sections.forEach((element) => {
   a.href = "#";
   li.appendChild(a);
   navbarList.appendChild(li);
-  a.classList = sectionId;
+  a.classList.add(sectionId);
 });
 
 
@@ -51,19 +53,12 @@ sections.forEach((element) => {
 //add addEventListener to classes
 //use jump() to scroll to different sections
 
-// const aTags = document.querySelectorAll('a');
-
-// aTags.forEach((a) => {
-//   a.addEventListener("click", () => {
-//     jump("#section1");
-//   });
-// });
-
-
 /**
  * 2) Add "click" event listeners on every Nav links you created.
  *
 */
+
+
 const section1 = document.querySelector(".section1");
 const section2 = document.querySelector(".section2");
 const section3 = document.querySelector(".section3");
@@ -91,24 +86,32 @@ section4.addEventListener("click", () => {
 });
 
 
+/**
+ * 4)  When a section is in the view, highlight the section as well as the corresponding
+ *     Nav link by adding some kind of active state to them.
+ *
+*/
+const h2 = document.querySelectorAll("h2");
+const li = document.querySelectorAll("li");
 
-function scrollAppear() {
-  const li = document.querySelectorAll("li");
-  const section = document.querySelector("section");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.intersectionRatio > 0) {
+      entry.target.classList.add("active-section");
+    } else {
+      entry.target.classList.remove("active-section");
+    }
+  });
+});
 
+h2.forEach(h => {
+  observer.observe(h);
+});
 
-  //This returns the size of an element and its position relative
-  //to the viewport
-  var introPosition = section.getBoundingClientRect().top;
-  //Returns the height of the screen
-  var screenPosition = window.innerHeight / 1.3;
-
-  if(introPosition < screenPosition) {
-    li.forEach((e) => {
-      e.classList.add("active-section");
-    });
-
+li.forEach(i => {
+  if(h2.classList.contains("active-section")) {
+    console.log('contains');
+  } else {
+    console.log("doesn't contain");
   }
-}
-
-window.addEventListener("scroll", scrollAppear);
+});

@@ -25,7 +25,8 @@ a {
 }
 
 .active-section {
-  border: 1px solid orange;
+  border-bottom: 10px solid orange;
+  transition: 1.2s border-bottom;
 }
 
 
