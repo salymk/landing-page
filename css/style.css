@@ -29,6 +29,10 @@ a {
   transition: 1.2s border-bottom;
 }
 
+.active-li {
+  border: 1px solid orange;
+}
+
 
 
 /* Typeography General*/

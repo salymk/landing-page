@@ -108,10 +108,20 @@ h2.forEach(h => {
   observer.observe(h);
 });
 
-li.forEach(i => {
-  if(h2.classList.contains("active-section")) {
-    console.log('contains');
-  } else {
-    console.log("doesn't contain");
-  }
-});
+// li.forEach(i => {
+//   if(h2.classList.contains("active-section")) {
+//     i.classList.add("active-li");
+//   } else {
+//     i.classList.remove("active-li");
+//   }
+// });
+
+// li.forEach(i => {
+//   h2.forEach(h => {
+//     if(h.target.classList.contains('active-section')) {
+//       i.target.classList.add("active-li");
+//     } else {
+//       i.target.classList.remove("active-li");
+//     }
+//   });
+// });
