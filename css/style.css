@@ -117,15 +117,6 @@ ul li {
   border-radius: 5px;
 }
 
-/* li:hover{
-  background-color: white;
-  color: coral;
-}
-
-.link:hover {
-  color: darkblue;
-} */
-
 
 /* Header Styles */
 .page__header {
@@ -259,4 +250,21 @@ to {
              translate(-1em)
              rotate(-360deg);
 }
+}
+
+
+/* Media Queries */
+@media(max-width: 320px) and (max-width: 768px) {
+  .navbar__menu ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  ul li {
+    margin: 5px;
+    font-size: .7em;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+  }
 }

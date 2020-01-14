@@ -1,33 +1,22 @@
 //Smooth scrolling module
 import jump from '/js/jump.js'
-//Scrolling animation
-sal();
-
-
-//1) Create the Nav Links for every section you have on the page.
-//2) Add "click" event listeners on every Nav links you created.
-//3) When user clicks on the link, scroll to the corresponding section.
-//4)  When a section is in the view, highlight the section as well as the corresponding Nav link by adding some kind of active state to them.
+// //Scrolling animation
+// sal();
 
 /**
- * Define Global Variables
- *
+  Define Global Variables
 */
 
 const navbarList = document.querySelector("#navbar__list");
 const sections = document.querySelectorAll("section");
+const h2 = document.querySelectorAll("h2");
 
-
-// const aTags = document.querySelectorAll('a');
 
 /**
- * 1) Create the Nav Links for every section on the page
- *
+  Navigation is built dynamically as an unordered list.
+  If you add new section, it would create a menu item for it
 */
 
-//Dynamically creates the navbar
-//If you add new section, it would create a
-//menu item for it.
 sections.forEach((element) => {
   const menuItem = element.dataset.nav;
   const sectionId = element.id;
@@ -44,28 +33,15 @@ sections.forEach((element) => {
 
 
 /**
- * Testing Area
- *
+  Select all a tags created
 */
-
-//Select all a elements
-//Iterate over them to get class names
-//add addEventListener to classes
-//use jump() to scroll to different sections
-
-
-
-//'a' tags
 const section1 = document.querySelector(".section1");
 const section2 = document.querySelector(".section2");
 const section3 = document.querySelector(".section3");
 const section4 = document.querySelector(".section4");
 
-
 /**
- * 2) Add "click" event listeners on every Nav links you created.
- * 3) When user clicks on the link, scroll to the corresponding section.
- *
+  When clicking an item from the navigation menu, the link should scroll to the appropriate section.
 */
 section1.addEventListener("click", () => {
   jump("#section1");
@@ -85,13 +61,10 @@ section4.addEventListener("click", () => {
 
 
 /**
- * 4)  When a section is in the view, highlight the section as well as the corresponding
- *     Nav link by adding some kind of active state to them.
- *
+    It should be clear which section is being viewed while scrolling through the page.
+    The Intersection Observer API provides a way to asynchronously observe changes in
+    the intersection of a target element with an ancestor element or with a top-level.
 */
-const h2 = document.querySelectorAll("h2");
-const section1Btn = document.querySelector("#section1-button");
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.intersectionRatio > 0) {
@@ -105,37 +78,3 @@ const observer = new IntersectionObserver((entries) => {
 h2.forEach(h => {
   observer.observe(h);
 });
-
-
-
-h2.forEach(h => {
-  if(h.classList.contains("active-section")) {
-    console.log("contains");
-  }
-});
-
-
-
-// h2.forEach((h) => {
-//   if(h.classList.contains("active-section")) {
-//     console.log("contains");
-//   }
-// });
-
-// li.forEach(i => {
-//   if(h2.classList.contains("active-section")) {
-//     i.classList.add("active-li");
-//   } else {
-//     i.classList.remove("active-li");
-//   }
-// });
-
-// li.forEach(i => {
-//   h2.forEach(h => {
-//     if(h.target.classList.contains('active-section')) {
-//       i.target.classList.add("active-li");
-//     } else {
-//       i.target.classList.remove("active-li");
-//     }
-//   });
-// });
