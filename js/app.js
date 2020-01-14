@@ -1,7 +1,5 @@
 //Smooth scrolling module
 import jump from '/js/jump.js'
-// //Scrolling animation
-// sal();
 
 /**
   Define Global Variables
@@ -77,4 +75,13 @@ const observer = new IntersectionObserver((entries) => {
 
 h2.forEach(h => {
   observer.observe(h);
+});
+
+
+const li = document.querySelectorAll("li");
+
+li.forEach(i => {
+  if(i.click === "true") {
+    i.style.border = "1px solid red;"
+  }
 });
