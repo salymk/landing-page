@@ -16,7 +16,6 @@ sal();
 
 const navbarList = document.querySelector("#navbar__list");
 const sections = document.querySelectorAll("section");
-const aTags = document.querySelectorAll('a');
 
 
 // const aTags = document.querySelectorAll('a');
@@ -40,6 +39,7 @@ sections.forEach((element) => {
   li.appendChild(a);
   navbarList.appendChild(li);
   a.classList.add(sectionId);
+  li.setAttribute("id", `#${sectionId}-btn`);
 });
 
 
@@ -53,12 +53,9 @@ sections.forEach((element) => {
 //add addEventListener to classes
 //use jump() to scroll to different sections
 
-/**
- * 2) Add "click" event listeners on every Nav links you created.
- *
-*/
 
 
+//'a' tags
 const section1 = document.querySelector(".section1");
 const section2 = document.querySelector(".section2");
 const section3 = document.querySelector(".section3");
@@ -66,6 +63,7 @@ const section4 = document.querySelector(".section4");
 
 
 /**
+ * 2) Add "click" event listeners on every Nav links you created.
  * 3) When user clicks on the link, scroll to the corresponding section.
  *
 */
@@ -92,17 +90,12 @@ section4.addEventListener("click", () => {
  *
 */
 const h2 = document.querySelectorAll("h2");
-const li = document.querySelectorAll("li");
+const section1Btn = document.querySelector("#section1-button");
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.intersectionRatio > 0) {
       entry.target.classList.add("active-section");
-      if(entry.target.classList.contains("active-section")){
-          li.forEach(i => {
-            i.classList.toggle("active-li")
-          });
-      }
     } else {
       entry.target.classList.remove("active-section");
     }
@@ -112,6 +105,16 @@ const observer = new IntersectionObserver((entries) => {
 h2.forEach(h => {
   observer.observe(h);
 });
+
+
+
+h2.forEach(h => {
+  if(h.classList.contains("active-section")) {
+    console.log("contains");
+  }
+});
+
+
 
 // h2.forEach((h) => {
 //   if(h.classList.contains("active-section")) {
