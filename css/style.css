@@ -27,7 +27,7 @@ a {
 .active-section {
   color: purple;
   border-bottom: 5px solid purple;
-  transition: 1.2s all;
+  transition: 1.4s all;
   background-color: white;
   border-radius: 8px;
   padding: 10px;
