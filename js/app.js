@@ -8,9 +8,6 @@ import jump from '/js/jump.js'
 const navbarList = document.querySelector("#navbar__list");
 const sections = document.querySelectorAll("section");
 const h2 = document.querySelectorAll("h2");
-const sectionContainer = document.querySelectorAll(".landing__container");
-
-console.log(sectionContainer.class);
 
 
 /**
@@ -24,7 +21,6 @@ sections.forEach((element) => {
   const li = document.createElement("li");
   const a = document.createElement("a");
   a.textContent = menuItem;
-  // a.href = `#${sectionId}`;
   a.href = "#";
   li.appendChild(a);
   navbarList.appendChild(li);
@@ -37,70 +33,6 @@ sections.forEach((element) => {
 });
 
 
-/**
-  Select all a tags created
-*/
-// const section1 = document.querySelector(".section1");
-// const section2 = document.querySelector(".section2");
-// const section3 = document.querySelector(".section3");
-// const section4 = document.querySelector(".section4");
-
-/**
-  When clicking an item from the navigation menu, the link should scroll to the appropriate section.
-*/
-// section1.addEventListener("click", () => {
-//   jump("#section1");
-// });
-//
-// section2.addEventListener("click", () => {
-//   jump("#section2");
-// });
-//
-// section3.addEventListener("click", () => {
-//   jump("#section3");
-// });
-//
-// section4.addEventListener("click", () => {
-//   jump("#section4");
-// });
-
-
-/**
-    It should be clear which section is being viewed while scrolling through the page.
-    The Intersection Observer API provides a way to asynchronously observe changes in
-    the intersection of a target element with an ancestor element or with a top-level.
-*/
-// const observer = new IntersectionObserver((entries) => {
-//   entries.forEach(entry => {
-//     const button = document.querySelector("#" + entry.target.id + "-btn");
-//     console.log(entry.target.id, entry.boundingClientRect.top);
-//     if(entry.boundingClientRect.top < 0 && entry.boundingClientRect.bottom > window.innerHeight) {
-//       entry.target.classList.add("active-section");
-//       button.classList.add("active-section");
-//     } else {
-//       entry.target.classList.remove("active-section");
-//       button.classList.remove("active-section");
-//     }
-//   });
-// });
-
-// document.addEventListener('scroll', ()=>{
-//   sections.forEach(section => {
-//     const button = document.querySelector("#" + section.id + "-btn");
-//     // console.log(entry.target.id, entry.boundingClientRect.top);
-//     if(section.getBoundingClientRect().top >= 0 && section.getBoundingClientRect().top < window.innerHeight) {
-//       section.classList.add("active-section");
-//       button.classList.add("active-section");
-//     } else {
-//       section.classList.remove("active-section");
-//       button.classList.remove("active-section");
-//     }
-//   })
-// });
-
-// sections.forEach(section => {
-//   observer.observe(section);
-// });
 
 /**
     It should be clear which section is being viewed while scrolling through the page.
