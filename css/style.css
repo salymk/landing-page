@@ -25,8 +25,12 @@ a {
 }
 
 .active-section {
-  border-bottom: 10px solid orange;
-  transition: 1.2s border-bottom;
+  color: purple;
+  border-bottom: 5px solid purple;
+  transition: 1.2s all;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
 }
 
 .active-li {
@@ -40,6 +44,7 @@ h1 {
   font-family: 'Fira Sans', sans-serif;
   font-size: 3em;
   margin: 2em 1rem;
+  padding-bottom: 2em;
 }
 
 @media only screen and (min-width: 35em){
