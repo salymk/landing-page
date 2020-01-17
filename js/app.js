@@ -26,9 +26,9 @@ sections.forEach((element) => {
   a.href = "#"+sectionId;
 });
 
-const scroll = new SmoothScroll('nav ul li a[href*="#"]', {
-  speed: 800
-});
+// const scroll = new SmoothScroll('nav ul li a[href*="#"]', {
+//   speed: 800
+// });
 
 
 
