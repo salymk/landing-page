@@ -1,6 +1,3 @@
-//Smooth scrolling module
-import jump from '/js/jump.js'
-
 /**
   Define Global Variables
 */
@@ -24,12 +21,13 @@ sections.forEach((element) => {
   a.href = "#";
   li.appendChild(a);
   navbarList.appendChild(li);
-  a.classList.add(sectionId, "scroll");
+  a.classList.add(sectionId);
   li.id = sectionId + "-btn";
-  a.addEventListener("click", (event) => {
-    event.preventDefault();
-    jump("#"+sectionId);
-  });
+  a.href = "#"+sectionId;
+});
+
+const scroll = new SmoothScroll('nav ul li a[href*="#"]', {
+  speed: 800
 });
 
 
